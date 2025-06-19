@@ -184,6 +184,10 @@
     
     \item 2-42) In one of my research papers I give a comparison-based sorting algorithm that runs in $O(n \log(\sqrt{n}))$. Given the existence of an $\Omega(n \log n)$ lower bound for sorting, how can this be possible?
     
+    \(n \log(\sqrt{n}) = n \log(n^{1/2}) = \frac{1}{2} n \log(n)\)
+
+    \(\frac{1}{2} n \log(n) \) is in the same order as \(n \log(n)\), since \(\frac{1}{2}\) is a constant and negligible, so it is possible as the latter does not dominate the former.
+    
     \item 2-46) You have a 100-story building and a couple of marbles. You must identify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles?
 
     With infinite marbles, we drop at the midpoint of the possible floors, that is, the $50^{th}$ floor. Whether the marble breaks determines whether the $50^{th}$ floor becomes the upper or lower bound for the next test, where it becomes the upper bound if it breaks, and the lower bound otherwise. We repeat the process, choosing the midpoint of the possible floors every time until we determine the lowest floor at which the marble breaks. This results in a worst-case of 7 marbles dropped.
