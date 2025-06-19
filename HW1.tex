@@ -214,12 +214,12 @@
         
         \item Only leaf nodes store data; internal nodes store two child pointers. The data field requires four bytes, and each pointer requires four bytes.
 
-        Each leaf node takes up 4 bytes for data, while each internal node takes up 8 bytes for pointers, meaning total space is $4*n_{leaf} + 8*n_{internal}$ and data space is just $4*n_{leaf}$ 
+        Each leaf node takes up 4 bytes for data and 6 bytes for pointers, while each internal node takes up 6 bytes for pointers, meaning total space is $10*n_{leaf} + 6*n_{internal}$ while data space is just $4*n_{leaf}$.
 
-        Given a complete tree with $n$ total nodes, it will have $n-1$ child pointers. Since each internal node has 2 child pointers, there must be $\frac{n-1}{2}$ internal nodes; therefore, there are $\frac{n+1}{2}$ leaf nodes.
-
-        $\frac{DataSpace}{TotalSpace}=\frac{4\frac{n+1}{2}}{4\frac{n+1}{2}+8\frac{n-1}{2}}=\frac{2(n+1)}{2(n+1)+4(n-1)}=\frac{(n+1)}{(n+1)+2(n-1)}=\boxed{\frac{(n+1)}{3n-1}}$
+        $\frac{DataSpace}{TotalSpace}=\frac{4n_{leaf}}{10n_{leaf}+6n_{interval}}$
         
+
+
     \end{enumerate}
     \item 3-12) Suppose you are given an input set $S$ of $n$ numbers, and a black box that, if given any sequence of real numbers and an integer $k$, instantly and correctly answers whether there is a subset of the input sequence whose sum is exactly $k$. Show how to use the black box $O(n)$ times to find a subset of $S$ that adds up to $k$.
     
@@ -265,7 +265,7 @@
     
     \item 3-19) Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval?
     
-    Shirts could be organized by color or type. Since there will usually multiple of either attribute it's best to sort by both following a heirarchy, such that we would sort by type first, then by color within each type, and can further sort by hue for each color.
+    Shirts could be organized by color or type. Since there will usually multiple of either attribute it's best to sort by all following a heirarchy, such that we would sort by type first, then by color within each type, and can further sort by hue for each color.
     
     \item 3-29) Give an algorithm for finding an ordered word pair (e.g., “New York”) occurring with the greatest frequency in a given webpage. Which data structures would you use? Optimize both time and space. 
 
@@ -295,11 +295,19 @@
 \begin{enumerate}
     \item Explain your choice of hashing function.  
     
-    \item  In the book, the hashes are constructed to be pseudo-random, while Python dictionary hashes are not random, both for different reasons. Is randomness a necessary property of Rabin-Karp hashes?
+    
+    
+    \item In the book, the hashes are constructed to be pseudo-random, while Python dictionary hashes are not random, both for different reasons. Is randomness a necessary property of Rabin-Karp hashes?
+    
+    
     
     \item The earliest implementations of Rabin-Karp used the Rabin fingerprint for hashing. What is this fingerprint, and what are its advantages?  
     
+    
+    
     \item How would you modify your function to search multiple patterns? 
+
+
 
 \end{enumerate}
 \end{document}
