@@ -1,0 +1,240 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage[
+  separate-uncertainty = true,
+  multi-part-units = repeat
+]{siunitx}
+
+\title{HW1}
+\author{2024-10379}
+\date{June 16 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Chapter 1}
+\begin{enumerate}
+    \item 1-1) Show that $a + b$ can be less than $min(a,b)$.
+    
+    Given $a = -5, b = -3$, $min(a,b) = -5$ and $a+b = -8$, where $-8 < -5$
+    
+    therefore, $a+b$ can be less than $min(a,b)$.
+    
+    \item 1-2) Show that $ a * b $ can be less than $min(a,b)$.
+    
+    Given $a = 1/2, b = 1/4$, $min(a,b) = 1/4$ and $a*b = 1/8$, where $1/8 < 1/4$
+    
+    therefore, $a*b$ can be less than $min(a,b)$.
+    
+    \item 1-8) Prove the correctness of the following algorithm for evaluating a polynomial.
+    $$P(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots a+1x + a_0$$
+    \begin{center}
+    \makebox[\textwidth][c]{%
+    \begin{minipage}{0.6\textwidth}
+    \textit{function} horner$(A, x)$
+
+    \quad $p = A_n$
+
+    \quad \textbf{for} $i$ from $n - 1$ to $0$
+
+    \quad\quad $p = p \cdot x + A_i$
+
+    \quad \textbf{return} $p$
+    \end{minipage}
+    }
+    \end{center}
+    
+    \item 1-10) Prove that $\sum_{i=1}^{n}i=n(n+1)/2 $ for $n \ge 0 $, by induction.
+    
+    Base Case $(n = 1)$:
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ & \\
+        $ \sum_{i=1}^{n} i $ & $ \frac{n(n+1)}{2}$ \\ \\
+        $ \sum_{i=1}^{0} i $ & $ \frac{0(0+1)}{2}$ \\ \\
+        $ 0 $ & $ 0 $ \\ \\
+        \end{tabular}
+    \end{center}
+    Inductive Case $ n = n_0 $:
+    
+        Assume $ \sum_{i=0}^{n_0} i = \frac{n_0(n_0+1)}{2} $
+
+        Therefore $ \sum_{i=0}^{n_0+1} i $ should equal $ \frac{(n_0+1)(n_0+2)}{2} $
+
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ \\
+        $ \sum_{i=0}^{n_0+1} i $ & $ \frac{(n_0+1)(n_0+2)}{2} $ \\ \\
+        $ \sum_{i=0}^{n_0} i + (n_0+1) $ & \\ \\
+        $ \frac{n_0(n_0+1)}{2} + (n_0+1) $ & \\ \\
+        $ \frac{n_0(n_0+1)}{2} + \frac{2(n_0+1)}{2} $ & \\ \\
+        $ \frac{n_0(n_0+1)+2(n_0+1)}{2} $ & \\ \\
+        $ \boxed{\frac{(n_0+1)(n_0+2)}{2}} $ & $ \boxed{\frac{(n_0+1)(n_0+2)}{2}} $\\ \\
+        \end{tabular}
+    \end{center}
+    \item 1-11) Prove that $\sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6} $ for $n \ge 0 $, by induction.
+    
+    Base Case $(n = 0)$:
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ & \\
+        $ \sum_{i=1}^{n}i^2 $ & $ \frac{n(n+1)(2n+1)}{6}$ \\ \\
+        $ \sum_{i=1}^{0}i^2 $ & $ \frac{0(0+1)(2(0)+1)}{6}$ \\ \\
+        $ 0 $ & $ 0 $ \\ \\
+        \end{tabular}
+    \end{center}
+    Inductive Case $ n = n_0 $:
+    
+        Assume $ \sum_{i=0}^{n_0} i^2 = \frac{n_0(n_0+1)(2n_0+1)}{6} $
+
+        Therefore $ \sum_{i=0}^{n_0+1} i^2 $ should equal $ \frac{(n_0+1)(n_0+2)(2n_0+3)}{6} $
+
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ \\
+        $ \sum_{i=0}^{n_0+1} i^2 $ & $ \frac{(n_0+1)(n_0+2)(2n_0+3)}{6} $ \\ \\
+        $ \sum_{i=0}^{n_0} i^2 + (n_0+1)^2 $ & \\ \\
+        $ \frac{n_0(n_0+1)(2n_0+1)}{6} + (n_0+1)^2 $ & \\ \\
+        $ \frac{n_0(n_0+1)(2n_0+1)}{6} + \frac{6(n_0+1)^2}{6} $ & \\ \\
+        $ \frac{(6(n_0+1)+(2n_0+1)(n_0))(n_0+1)}{6} $ & \\ \\
+        $ \frac{((6n_0+6)+(2n_0^2+1n_0))(n_0+1)}{6} $ & \\ \\
+        $ \frac{(2n_0^2+7n_0+6)(n_0+1)}{6} $ & \\ \\
+        $ \boxed{\frac{(2n_0+3)(n_0+2)(n_0+1)}{6}} $ & \boxed{\frac{(n_0+1)(n_0+2)(2n_0+3)}{6}}\\ \\
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+
+\section{Chapter 2}
+\begin{enumerate}
+    \item 2-5) Suppose the following algorithm is used to evaluate the polynomial
+    
+    \(p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0\)
+    
+    \begin{center}
+    \makebox[\textwidth][c]{%
+    \begin{minipage}{0.6\textwidth}
+    $p := a_o;$
+
+    $xpower := 1;$
+
+    $\textbf{for } i := 1 \text{ to }n \text{ do}$
+
+    \quad $xpower := x * xpower;$
+
+    \quad $p := p + a_i * xpower$
+
+    \textbf{end}
+
+    \end{minipage}
+    }   
+    \end{center}
+    \begin{enumerate}
+        \item How many multiplications are done in the worst-case? How many additions?
+
+        In the worst case, multiplications will be done a total of 2n times while additions happen n times.
+
+        \item How many multiplications are done on the average?
+
+        On average, multiplications are done 2n times.
+        
+        \item Can you improve this algorithm?
+
+        
+        
+    \end{enumerate}
+    \item 2-13) Prove that if $f_1(n) =O(g_1(n))$ and $f_2(n)=O(g_2(n))$, then $f_1(n)+f_2(n)=O(g_1(n)+g_2(n))$.
+
+    
+
+    \item 2-32) Prove that: 
+    \(1^2-2^2+3^2-4^2+...+(-1)^{k-1}k^2=\frac{(-1)^{k-1}k(k+1)}{2}\)
+
+    Base Case $(k=1)$:
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ & \\
+        $ 1^2 $ & $ \frac{(-1)^{1-1}1(1+1)}{2} $ \\ \\
+        $ 1 $ & $ \frac{(-1)^{0}(2)}{2} $ \\ \\
+        $ 1 $ & $ 1 $ \\ \\
+        \end{tabular}
+    \end{center}
+    Inductive Case $ k = k_0 $:
+    
+        Assume $ (1^2-2^2+3^2-4^2+...+(-1)^{k_0-1}k_0^2 = \frac{(-1)^{k_0-1}k_0(k_0+1)}{2} $
+
+        Therefore $ (1^2-2^2+3^2-4^2+...+(-1)^{k_0}(k_0+1)^2 $ 
+        
+        should equal $ \frac{(-1)^{k_0}(k_0+1)(k_0+2)}{2} $
+
+    \begin{center}
+        \begin{tabular}{ c | c } 
+        LHS: & RHS: \\ \\
+        $ \frac{(-1)^{k_0-1}k_0(k_0+1)}{2} + (-1)^{k_0}(k_0+1)^2 $ & $ \frac{(-1)^{k_0}(k_0+1)(k_0+2)}{2} $ \\ \\
+        $ \frac{(-1)^{k_0-1}k_0(k_0+1)}{2} + \frac{2(-1)^{k_0}(k_0+1)^2}{2} $ &  \\ \\
+        $ \frac{(-1)^{k_0-1}k_0(k_0+1) + 2(-1)^{k_0}(k_0+1)^2}{2}  $ &  \\ \\
+        $ \frac{(k_0+1)((-1)^{k_0-1}k_0+2(-1)^{k_0}(k_0+1))}{2}  $ &  \\ \\
+        $ \frac{(k_0+1)(-1)^{k_0}(\frac{k_0}{-1}+2(k_0+1))}{2}  $ &  \\ \\
+        $ \frac{(k_0+1)(-1)^{k_0}(-k_0+2k_0+2)}{2}  $ &  \\ \\
+        $ \boxed{\frac{(k_0+1)(-1)^{k_0}(k_0+2)}{2}}  $ &  $\boxed{\frac{(-1)^{k_0}(k_0+1)(k_0+2)}{2}}$\\ \\
+        \end{tabular}
+    \end{center}
+    
+    \item 2-42) In one of my research papers I give a comparison-based sorting algorithm that runs in $O(n \log(\sqrt{n}))$. Given the existence of an $\Omega(n \log n)$ lower bound for sorting, how can this be possible?
+    
+    \item 2-46) You have a 100-story building and a couple of marbles. You must identify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles?
+
+    With infinite marbles, we drop at the midpoint of the possible floors, that is, the $50^{th}$ floor. Whether the marble breaks determines whether the $50^{th}$ floor becomes the upper or lower bound for the next test, where it becomes the upper bound if it breaks, and the lower bound otherwise. We repeat the process, choosing the midpoint of the possible floors every time until we determine the lowest floor at which the marble breaks. This results in a worst-case of 7 marbles dropped.
+
+    With one marble, we must drop it linearly starting from floor 1 and going through all floors to floor 100. With two marbles, we can afford to lose one marble; therefore, we drop the first marble at a certain interval of floors, essentially segmenting the building, such that the second marble needs only to go through all floors within a segment. Specifically, the interval at which the first marble is dropped should decrease by one for every segment, such that the worst case for every segment would require the same number of drops and would be equal to the first floor on which the marble at. Mathematically, the least drops happen when n is smallest, where,
+    
+    \(\sum^n_{i=0}(n-i) >= 100\)
+
+    which is $ n = 14$.
+    
+\end{enumerate}
+
+\section{Chapter 3}
+\begin{enumerate}
+    \item 3-5) Find the overhead fraction (the ratio of data space over total space) for each of the following binary tree implementations on $n$ nodes:
+    \begin{enumerate}
+        \item All nodes store data, two child pointers, and a parent pointer. The data field requires four bytes, and each pointer requires four bytes. 
+        
+        Each node takes up 4 bytes for data, 8 bytes for its child pointers, and 4 bytes for its parent pointer, totaling 16 bytes.
+        
+        $\frac{DataSpace}{TotalSpace}=\frac{4n}{16n}=\boxed{\frac{1}{4}}$
+        
+        \item Only leaf nodes store data; internal nodes store two child pointers. The data field requires four bytes, and each pointer requires four bytes.
+
+        Each leaf node takes up 4 bytes for data, while each internal node takes up 8 bytes for pointers, meaning total space is $4*n_{leaf} + 8*n_{internal}$ and data space is just $4*n_{leaf}$ 
+
+        Given a tree with $n$ total nodes, it will have $n-1$ pointers. Since each internal node has 2 pointers, there must be $\frac{n-1}{2}$ internal nodes; therefore, there are $\frac{n+1}{2}$ leaf nodes.
+
+        $\frac{DataSpace}{TotalSpace}=\frac{4\frac{n+1}{2}}{4\frac{n+1}{2}+8\frac{n-1}{2}}=\frac{2(n+1)}{2(n+1)+4(n-1)}=\frac{(n+1)}{(n+1)+2(n-1)}=\boxed{\frac{(n+1)}{3n-1}}$
+        
+    \end{enumerate}
+    \item 3-12) Suppose you are given an input set $S$ of $n$ numbers, and a black box that, if given any sequence of real numbers and an integer $k$, instantly and correctly answers whether there is a subset of the input sequence whose sum is exactly $k$. Show how to use the black box $O(n)$ times to find a subset of $S$ that adds up to $k$.
+    \item 3-18) What method would you use to look up a word in a dictionary?
+    \item 3-19) Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval?
+    \item 3-29) Give an algorithm for finding an ordered word pair (e.g., “New York”) occurring with the greatest frequency in a given webpage. Which data structures would you use? Optimize both time and space. 
+\end{enumerate}
+
+\section{Ex. 1}
+\begin{enumerate}
+    \item Give the theoretical worst-case analysis for the time complexities of each strategy.
+    \item Give the theoretical average-case analysis for the time complexities of each strategy.
+    \item If you want to minimize average steps, what is the best strategy and why is it objectively optimal? Note: the best strategy may be one of the strategies given, or you may need to make your own.
+    \item How does the optimal strategy change if instead of saying higher or lower, each guess tells you is you are within $\pm \frac{N}{k}$ of the target? For simplicity, assume $k$ is an integer greater than 1.
+\end{enumerate}
+
+\section{Ex. 2}
+\begin{enumerate}
+    \item Explain your choice of hashing function.  
+    \item  In the book, the hashes are constructed to be pseudo-random, while Python dictionary hashes are not random, both for different reasons. Is randomness a necessary property of Rabin-Karp hashes?
+    \item The earliest implementations of Rabin-Karp used the Rabin fingerprint for hashing. What is this fingerprint, and what are its advantages?  
+    \item How would you modify your function to search multiple patterns? 
+
+\end{enumerate}
+\end{document}
