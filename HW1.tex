@@ -2,6 +2,7 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{parskip}
+\usepackage{xcolor}
 \usepackage[
   separate-uncertainty = true,
   multi-part-units = repeat
@@ -30,10 +31,11 @@
     therefore, $a*b$ can be less than $min(a,b)$.
     
     \item 1-8) Prove the correctness of the following algorithm for evaluating a polynomial.
-    $$P(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots a+1x + a_0$$
-    \begin{center}
+
+    $P(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots a+1x + a_0$
+    
     \makebox[\textwidth][c]{%
-    \begin{minipage}{0.6\textwidth}
+    \begin{minipage}{0.8\textwidth}
     \textit{function} horner$(A, x)$
 
     \quad $p = A_n$
@@ -45,7 +47,6 @@
     \quad \textbf{return} $p$
     \end{minipage}
     }
-    \end{center}
     
     \item 1-10) Prove that $\sum_{i=1}^{n}i=n(n+1)/2 $ for $n \ge 0 $, by induction.
     
@@ -115,7 +116,7 @@
     
     \begin{center}
     \makebox[\textwidth][c]{%
-    \begin{minipage}{0.6\textwidth}
+    \begin{minipage}{0.8\textwidth}
     $p := a_o;$
 
     $xpower := 1;$
@@ -187,7 +188,7 @@
     
     \(n \log(\sqrt{n}) = n \log(n^{1/2}) = \frac{1}{2} n \log(n)\)
 
-    \(\frac{1}{2} n \log(n) \) is in the same order as \(n \log(n)\), since \(\frac{1}{2}\) is a constant and negligible, so it is possible as the latter does not dominate the former.
+    \(\frac{1}{2} n \log(n) \) is in the same order as \(n \log(n)\), since \(\frac{1}{2}\) is a constant and negligible, so the situation is possible, as the latter does not dominate the former.
     
     \item 2-46) You have a 100-story building and a couple of marbles. You must identify the lowest floor for which a marble will break if you drop it from this floor. How fast can you find this floor if you are given an infinite supply of marbles? What if you have only two marbles?
 
@@ -215,27 +216,73 @@
 
         Each leaf node takes up 4 bytes for data, while each internal node takes up 8 bytes for pointers, meaning total space is $4*n_{leaf} + 8*n_{internal}$ and data space is just $4*n_{leaf}$ 
 
-        Given a tree with $n$ total nodes, it will have $n-1$ child pointers. Since each internal node has 2 child pointers, there must be $\frac{n-1}{2}$ internal nodes; therefore, there are $\frac{n+1}{2}$ leaf nodes.
+        Given a complete tree with $n$ total nodes, it will have $n-1$ child pointers. Since each internal node has 2 child pointers, there must be $\frac{n-1}{2}$ internal nodes; therefore, there are $\frac{n+1}{2}$ leaf nodes.
 
         $\frac{DataSpace}{TotalSpace}=\frac{4\frac{n+1}{2}}{4\frac{n+1}{2}+8\frac{n-1}{2}}=\frac{2(n+1)}{2(n+1)+4(n-1)}=\frac{(n+1)}{(n+1)+2(n-1)}=\boxed{\frac{(n+1)}{3n-1}}$
         
     \end{enumerate}
     \item 3-12) Suppose you are given an input set $S$ of $n$ numbers, and a black box that, if given any sequence of real numbers and an integer $k$, instantly and correctly answers whether there is a subset of the input sequence whose sum is exactly $k$. Show how to use the black box $O(n)$ times to find a subset of $S$ that adds up to $k$.
     
+    
+
+    \makebox[\textwidth][c]{%
+    \begin{minipage}{0.8\textwidth}
+
+    \(S = \{s_1, s_2, s_3, \cdots, s_n\}\)
+
+    \textit{function} blackBox$(S, k) \rightarrow bool$ \textcolor{lightgray}{ \# O(1)}
+
+    \quad \textbf{if} there exists $S_0 \subseteq S$ where $sum(S_0) = k$
+        
+    \quad \quad \textbf{return} $true$
+    
+    \quad \textbf{else}
+        
+    \quad \quad \textbf{return} $false$
+
+    \textbf{if} blackBox$(S, k)$ \textcolor{lightgray}{ \# O(n)}
+    
+    \quad \textbf{for} $S_i$ in $S$
+
+    \quad \quad \textbf{if} blackBox$(S - S_i, k)$
+
+    \quad \quad \quad $S = S - S_i$
+
+    \quad \textbf{return} $S$
+
+    \textbf{else}
+
+    \quad \textbf{return} "No such subset in S"
+
+    \end{minipage}
+    }
+
+    
+    
     \item 3-18) What method would you use to look up a word in a dictionary?
     
+    
+    
     \item 3-19) Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval?
+    
     Shirts could be organized by color or type. Since there will usually multiple of either attribute it's best to sort by both following a heirarchy, such that we would sort by type first, then by color within each type, and can further sort by hue for each color.
+    
     \item 3-29) Give an algorithm for finding an ordered word pair (e.g., “New York”) occurring with the greatest frequency in a given webpage. Which data structures would you use? Optimize both time and space. 
+
+
 
 \end{enumerate}
 
 \section{Ex. 1}
 \begin{enumerate}
     \item Give the theoretical worst-case analysis for the time complexities of each strategy.
+    
     linGuess: $O(N)$
+    
     randGuess: $O(N)$
+    
     binGuess: $O(log(N))$
+    
     \item Give the theoretical average-case analysis for the time complexities of each strategy.
     
     \item If you want to minimize average steps, what is the best strategy and why is it objectively optimal? Note: the best strategy may be one of the strategies given, or you may need to make your own.
