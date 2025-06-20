@@ -65,7 +65,7 @@
     \begin{center}
         \begin{tabular}{ c | c } 
         LHS: & RHS: \\ \\
-        horner$(A, x)$ where $n = n_0$ & $ a_{n_0+1}x^{n_0+1} + a_{n_0}x^{n_0} + \cdots + a_1x + a_0 $ \\ \\
+        horner$(A, x)$ where $n = n_0 + 1$ & $ a_{n_0+1}x^{n_0+1} + a_{n_0}x^{n_0} + \cdots + a_1x + a_0 $ \\ \\
         $ (a_{n_0+1}x^{n_0} + a_{n_0}x^{n_0 - 1} + \cdots + a_2x + a_1)*x+a_0 $ & \\ \\
         $ \boxed{a_{n_0+1}x^{n_0 + 1} + a_{n_0}x^{n_0} + \cdots + a_2x^2 + a_1x + a_0} $  & $\boxed{a_{n_0+1}x^{n_0 + 1} + a_{n_0}x^{n_0} + \cdots + a_2x^2 + a_1x + a_0}$ \\ \\
         \end{tabular}
@@ -166,13 +166,37 @@
         
         \item Can you improve this algorithm?
 
-        Horner's method, found in 1-8, is a more efficient algorithm for evaluating a polynomial.
-        I'm unsure is this is true, since horner would by multiplying an increasing number of terms by x.
+        Horner's method, found in 1-8, is a more efficient algorithm for evaluating a polynomial where only $n$ multiplications are performed instead of $n-1$.
         
     \end{enumerate}
-    \item 2-13) Prove that if $f_1(n) =O(g_1(n))$ and $f_2(n)=O(g_2(n))$, then $f_1(n)+f_2(n)=O(g_1(n)+g_2(n))$.
+    \item 2-13) Prove that if $f_1(n) = O(g_1(n))$ and $f_2(n) = O(g_2(n))$, then $f_1(n) + f_2(n) = O(g_1(n) + g_2(n))$.
 
-    
+    By the definition of Big-O notation:
+
+
+there exists $c_1 > 0,\, n_1 $ such that $ f_1(n) \leq c_1 g_1(n) $ for all $ n \geq n_1,$
+
+
+and $c_2 > 0,\, n_2 $ such that $ f_2(n) \leq c_2 g_2(n) $ for all $ n \geq n_2.$
+
+
+Let $ n_0 = \max(n_1, n_2) $. Then for all $ n \geq n_0 $, we have:
+
+\[
+f_1(n) + f_2(n) \leq c_1 g_1(n) + c_2 g_2(n).
+\]
+
+Let $ c = \max(c_1, c_2) $. Then:
+
+\[
+f_1(n) + f_2(n) \leq c(g_1(n) + g_2(n)).
+\]
+
+By definition of Big-O:
+
+\[
+f_1(n) + f_2(n) = O(g_1(n) + g_2(n)).
+\]
 
     \item 2-32) Prove that: 
     \(1^2-2^2+3^2-4^2+\cdots+(-1)^{k-1}k^2=\frac{(-1)^{k-1}k(k+1)}{2}\)
@@ -278,7 +302,7 @@
 
     \item 3-18) What method would you use to look up a word in a dictionary?
     
-    I would use a binary search.
+    I would match the first letter in the word to an entry in the dictionary then continue. If possible it would be best to go to the middle of a section that satisfies the current letters that I have matched.
     
     \item 3-19) Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval?
     
@@ -286,8 +310,7 @@
     
     \item 3-29) Give an algorithm for finding an ordered word pair (e.g., “New York”) occurring with the greatest frequency in a given webpage. Which data structures would you use? Optimize both time and space. 
 
-    brute force
-    assign number to each appearing word, searching for integer is faster than word
+    I would first create a dictionary and assign an integer to each word present in the document. After that we parse the document
 
 
 
@@ -299,9 +322,9 @@
     
     linGuess: $O(N)$
     
-    randGuess: $O(N)$
+    randGuess: $O(\log(N))$
     
-    binGuess: $O(log(N))$
+    binGuess: $O(\log(N))$
     
     \item Give the theoretical average-case analysis for the time complexities of each strategy.
     
@@ -313,7 +336,7 @@
     
     \item If you want to minimize average steps, what is the best strategy and why is it objectively optimal? Note: the best strategy may be one of the strategies given, or you may need to make your own.
     
-    The best startegy is binary guess which has O(log(N)).
+    The best startegy is binary guess where the worst case will take $n$ steps where $n^2-1 \ge N$. This is because we always eliminate the maximum amount of possibilities with equal probability.
 
     \item How does the optimal strategy change if instead of saying higher or lower, each guess tells you is you are within $\pm \frac{N}{k}$ of the target? For simplicity, assume $k$ is an integer greater than 1.
 
@@ -325,19 +348,19 @@
 \begin{enumerate}
     \item Explain your choice of hashing function.  
     
-    
+    The hashing function I chose to use converts a character into an integer according to CP1252. After that it multiplies the integer by 256 to the power of the character's position in the hashed string. The sum of all integers is the hash
     
     \item In the book, the hashes are constructed to be pseudo-random, while Python dictionary hashes are not random, both for different reasons. Is randomness a necessary property of Rabin-Karp hashes?
     
+    Randomness is not a necessary property of the Rabin-Karp algorithm. What is necessary is efficiency timewise as well as to reduce collisions as much as possible, so as to reduce false-positives and wasted computations to verify.
     
-    
-    \item The earliest implementations of Rabin-Karp used the Rabin fingerprint for hashing. What is this fingerprint, and what are its advantages?  
+    \item The earliest implementations of Rabin-Karp used the Rabin fingerprint for hashing. What is this fingerprint, and what are its advantages?
     
     
     
     \item How would you modify your function to search multiple patterns? 
 
-
+    I would turn all patterns into their hashes, grouped by the length of each string, then it would roll through with windows of each length for which a pattern exists. For patterns of the same length, I would compare the hash within the same roll.
 
 \end{enumerate}
 \end{document}
