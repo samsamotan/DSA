@@ -48,12 +48,12 @@
     \end{minipage}
     }
 
-    Base Case $(n = 1)$:
+    Base Case $(n = 0)$:
     \begin{center}
         \begin{tabular}{ c | c } 
         LHS: & RHS: \\ & \\
         horner$(A, x)$ & $ a_0$ \\ \\
-        $ a_0 $ & $ \frac{0(0+1)}{2}$ \\ \\
+        $ a_0 $ & \\ \\
         \end{tabular}
     \end{center}
     Inductive Case $ n = n_0 $:
@@ -278,7 +278,7 @@
 
     \item 3-18) What method would you use to look up a word in a dictionary?
     
-    
+    I would use a binary search.
     
     \item 3-19) Imagine you have a closet full of shirts. What can you do to organize your shirts for easy retrieval?
     
@@ -313,12 +313,12 @@
     
     \item If you want to minimize average steps, what is the best strategy and why is it objectively optimal? Note: the best strategy may be one of the strategies given, or you may need to make your own.
     
-
+    The best startegy is binary guess which has O(log(N)).
 
     \item How does the optimal strategy change if instead of saying higher or lower, each guess tells you is you are within $\pm \frac{N}{k}$ of the target? For simplicity, assume $k$ is an integer greater than 1.
 
+    With this change, the binary guess is impossible as since the bounds remain centered on our initial guess it is impossible to guess a number other than n/2.
 
-    
 \end{enumerate}
 
 \section{Ex. 2}
