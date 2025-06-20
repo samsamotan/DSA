@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  20 JUN 2025 16:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.16)  20 JUN 2025 16:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1.tex"
-(c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1.tex
+**"c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1_Written.tex"
+(c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1_Written.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -213,8 +213,8 @@ Package translations Info: No language package found. I am going to use `english
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box66
-) (./HW1.aux)
-\openout1 = `HW1.aux'.
+) (./HW1_Written.aux)
+\openout1 = `HW1_Written.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -288,7 +288,7 @@ Overfull \hbox (25.00003pt too wide) in paragraph at lines 271--302
 
 [8]
 
-[9] (./HW1.aux)
+[9] (./HW1_Written.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -296,14 +296,14 @@ L3 programming layer <2024-08-30>
  ) 
 Here is how much of TeX's memory you used:
  8174 strings out of 473579
- 183009 string characters out of 5732263
- 564438 words of memory out of 5000000
+ 183105 string characters out of 5732263
+ 564454 words of memory out of 5000000
  31038 multiletter control sequences out of 15000+600000
  564110 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,13n,92p,749b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,13n,92p,757b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on HW1.pdf (9 pages, 181796 bytes).
+Output written on HW1_Written.pdf (9 pages, 181796 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

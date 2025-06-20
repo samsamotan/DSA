@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1750407557.65658 "c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1.tex" "HW1.pdf" "HW1" 1750407559.58954 0
-  "HW1.aux" 1750407559 509 d66595ff89b7afbf52154bbc09841c28 "pdflatex"
-  "HW1.tex" 1750407556 16043 1cc158a09d6b106a7fe8542a8a8a76a2 ""
-  "c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1.tex" 1750407556 16043 1cc158a09d6b106a7fe8542a8a8a76a2 ""
+["pdflatex"] 1750408029.49006 "c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1_Written.tex" "HW1_Written.pdf" "HW1_Written" 1750408031.26662 0
+  "HW1_Written.aux" 1750408031 509 d66595ff89b7afbf52154bbc09841c28 "pdflatex"
+  "HW1_Written.tex" 1750407993 16043 1cc158a09d6b106a7fe8542a8a8a76a2 ""
+  "c:/Users/Sam/Documents/College/2025 Summer Term/DSA/HW1_Written.tex" 1750407993 16043 1cc158a09d6b106a7fe8542a8a8a76a2 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1726456922 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1726453928 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1726453928 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -73,7 +73,7 @@
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1726468715 3326046 3dc2edcb0fe87cb8db881994bd9764e3 ""
   "c:/texlive/2024/texmf.cnf" 1726468266 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "HW1.aux"
-  "HW1.log"
-  "HW1.pdf"
+  "HW1_Written.aux"
+  "HW1_Written.log"
+  "HW1_Written.pdf"
   (rewritten before read)
